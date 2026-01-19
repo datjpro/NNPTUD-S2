@@ -39,9 +39,13 @@ for (const element of Products) {
     console.log(`Name: ${element.name}, Price: ${element.price}, isAvailable: ${element.isAvailable}`);
 }
 //cau9
-for (const key in Products) {
-    if (!Products.hasOwn(Products, key)) continue;
-    
-    const element = Products[key];
-    console.log(`ID: ${element.id}, Category: ${element.category}, Quantity: ${element.quantity}, isAvailable: ${element.isAvailable}`);
+const firstProduct = Products[0];
+for (const key in firstProduct) {
+    console.log(`${key}: ${firstProduct[key]}`);
 }
+
+// Câu 10: Lấy danh sách tên các sản phẩm đang bán (isAvailable) và còn hàng (quantity > 0)
+const availableProductNames = Products
+    .filter(p => p.isAvailable && p.quantity > 0)
+    .map(p => p.name);
+console.log(availableProductNames);
