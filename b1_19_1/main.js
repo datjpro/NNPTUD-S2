@@ -1,4 +1,4 @@
-//1
+//cau1
 function Product(id, name, price, quantity, category, isAvailable) {
     this.id = id;
     this.name = name;
