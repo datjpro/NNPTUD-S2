@@ -22,13 +22,13 @@ const TenvaGiaSP = Products.map(product => ({
     Price: product.price
 }));
 //cau4
-const SoLuongTonKho = Products.map(product => product.quantity > 0)
-console.log(SoLuongTonKho);
+const sanPhamConHang = Products.filter(product => product.quantity > 0);
+console.log(sanPhamConHang);
 //cau5
 const Ktra6Jack = Products.some(product => product.price > 30000000);
 console.log(Ktra6Jack);
 //cau6
-const KtraPhuKien = Products.every(product => product.category === "Phu kien"&& product.isAvailable === true);
+const KtraPhuKien = Products.filter(product => product.category === "Phu kien"&& product.isAvailable === true);
 console.log(KtraPhuKien);
 //cau7
 const TongGiaTri = Products.reduce((total, product) => total + (product.price * product.quantity), 0);
@@ -36,7 +36,7 @@ console.log(TongGiaTri);
 
 //cau8
 for (const element of Products) {
-    console.log(`Name: ${element.name}, Price: ${element.price}, isAvailable: ${element.isAvailable}`);
+    console.log(`${element.name} - ${element.category} - ${element.isAvailable ? "Đang bán" : "Không bán"}`);
 }
 //cau9
 const firstProduct = Products[0];
